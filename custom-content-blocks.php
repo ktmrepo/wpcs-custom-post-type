@@ -2,9 +2,9 @@
 /**
  * Plugin Name: Custom Content Blocks
  * Plugin URI: https://yoursite.com
- * Description: Create custom content blocks with automatic shortcode generation for easy embedding across your site.
+ * Description: Create custom content blocks claude.
  * Version: 1.0.0
- * Author: Your Name
+ * Author: WPCS Claude
  * License: GPL v2 or later
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: custom-content-blocks
@@ -32,9 +32,6 @@ class CustomContentBlocks {
     }
     
     private function __construct() {
-        // Include required files early
-        $this->includeFiles();
-        
         add_action('init', array($this, 'init'));
         add_action('plugins_loaded', array($this, 'loadTextDomain'));
         register_activation_hook(__FILE__, array($this, 'activate'));
@@ -42,6 +39,9 @@ class CustomContentBlocks {
     }
     
     public function init() {
+        // Include required files
+        $this->includeFiles();
+        
         // Initialize components
         new CCB_PostType();
         new CCB_ShortcodeHandler();
@@ -59,7 +59,10 @@ class CustomContentBlocks {
     }
     
     public function activate() {
-        // Files are already included in constructor, so we can safely use the classes
+        // Include required files first
+        $this->includeFiles();
+        
+        // Create custom post type
         $postType = new CCB_PostType();
         $postType->registerPostType();
         
