@@ -1,0 +1,13 @@
+{
+  "name": "wordpress-plugin-debugger",
+  "version": "1.0.0",
+  "description": "WordPress Plugin Debugging Tool",
+  "main": "debug-analyzer.js",
+  "scripts": {
+    "debug": "node debug-analyzer.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["wordpress", "plugin", "debugging"],
+  "author": "Plugin Debugger",
+  "license": "MIT"
+}

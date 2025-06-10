@@ -1,0 +1,1 @@
+wpcs-custom-post-type
