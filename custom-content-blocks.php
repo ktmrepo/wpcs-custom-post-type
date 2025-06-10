@@ -32,6 +32,9 @@ class CustomContentBlocks {
     }
     
     private function __construct() {
+        // Include required files early
+        $this->includeFiles();
+        
         add_action('init', array($this, 'init'));
         add_action('plugins_loaded', array($this, 'loadTextDomain'));
         register_activation_hook(__FILE__, array($this, 'activate'));
@@ -39,9 +42,6 @@ class CustomContentBlocks {
     }
     
     public function init() {
-        // Include required files
-        $this->includeFiles();
-        
         // Initialize components
         new CCB_PostType();
         new CCB_ShortcodeHandler();
