@@ -25,7 +25,7 @@ class CCB_AdminInterface {
         if ($post_type === 'content_blocks' || $hook === 'toplevel_page_content-blocks-help') {
             wp_enqueue_script(
                 'ccb-admin-js',
-                CCB_PLUGIN_URL . 'assets/js/admin-scripts.js',
+                CCB_PLUGIN_URL . 'assets/js/admin-script.js',
                 array('jquery'),
                 CCB_VERSION,
                 true
@@ -42,7 +42,7 @@ class CCB_AdminInterface {
             
             wp_enqueue_style(
                 'ccb-admin-css',
-                CCB_PLUGIN_URL . 'assets/css/admin-styles.css',
+                CCB_PLUGIN_URL . 'assets/css/admin-style.css',
                 array(),
                 CCB_VERSION
             );
@@ -174,43 +174,6 @@ class CCB_AdminInterface {
                 <?php endif; ?>
             </div>
         </div>
-        
-        <style>
-        .ccb-help-container {
-            max-width: 800px;
-        }
-        .ccb-help-section {
-            background: #fff;
-            padding: 20px;
-            margin: 20px 0;
-            border: 1px solid #ccd0d4;
-            box-shadow: 0 1px 1px rgba(0,0,0,.04);
-        }
-        .ccb-help-section h2 {
-            margin-top: 0;
-            color: #23282d;
-        }
-        .ccb-help-section code {
-            background: #f1f1f1;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: Consolas, Monaco, monospace;
-        }
-        .ccb-help-section table {
-            margin-top: 10px;
-        }
-        .ccb-help-section table code {
-            white-space: nowrap;
-        }
-        .ccb-shortcode-list {
-            background: #f9f9f9;
-            border: 1px solid #ddd;
-            padding: 10px;
-            border-radius: 3px;
-            font-family: monospace;
-            font-size: 12px;
-        }
-        </style>
         <?php
     }
     

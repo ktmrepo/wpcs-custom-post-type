@@ -59,7 +59,7 @@ class CustomContentBlocks {
     }
     
     public function activate() {
-        // Create custom post type
+        // Files are already included in constructor, so we can safely use the classes
         $postType = new CCB_PostType();
         $postType->registerPostType();
         
